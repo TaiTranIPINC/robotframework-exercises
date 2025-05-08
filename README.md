@@ -27,7 +27,5 @@
 ## Quy tắc bài tập
 
 - Không sửa file ngoài bài yêu cầu.
-- Làm đúng theo yêu cầu ghi trong từng file `.robot`.
+- Làm đúng theo yêu cầu ghi trong từng file `readme.md`.
 - Mỗi bài tập sẽ có tiêu chí pass cụ thể.
-
----
