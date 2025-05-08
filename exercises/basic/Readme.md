@@ -1,116 +1,87 @@
-# 📘 Tài liệu: Kiến thức cơ bản về Robot Framework
+## 🔧 Resource và Library trong Robot Framework
 
-## 1. 🤖 Robot Framework là gì? Dùng để làm gì?
+### 1. Thư viện tiêu chuẩn nào được tích hợp sẵn trong Robot Framework?
 
-**Robot Framework** là một công cụ **kiểm thửe tự động mã nguồn mở** (open-source) dùng để viết và thực thi các ca kiểm thử (test cases).
-Nó hỗ trợ **kiểm thử chấp nhận** (acceptance testing), **kiểm thử hành vi** (behavior-driven testing), và có thể tích hợp tốt với nhiều thư viện kiểm thử như Selenium, Appium, REST API, và nhiều hơn nữa.
+Robot Framework đi kèm với một số **thư viện tiêu chuẩn (standard libraries)**, bao gồm:
 
-✔️ Dùng để tự động hóa kiểm thử giao diện người dùng, API, dữ liệu và nhiều dạng kiểm thử khác.
+* `BuiltIn` – cung cấp các keyword cơ bản như `Log`, `Should Be Equal`, `Run Keyword If`, v.v.
+* `Collections` – làm việc với danh sách và từ điển.
+* `String` – xử lý chuỗi.
+* `DateTime` – thao tác với ngày giờ.
+* `OperatingSystem` – tương tác với hệ thống tệp và lệnh hệ điều hành.
+* `Dialogs` – tạo các hộp thoại tương tác.
+* `Screenshot` – chụp màn hình.
 
----
+### 2. Thư viện SeleniumLibrary dùng để làm gì?
 
-## 2. 🌪️ Robot Framework hỗ trợ những loại kiểm thử nào?
+`SeleniumLibrary` là một thư viện mở rộng dùng để **tự động hóa kiểm thử giao diện web (UI testing)**. Nó cho phép bạn:
 
-Robot Framework hỗ trợ các loại kiểm thử chính sau:
+* Mở trình duyệt và điều hướng web.
+* Tương tác với các phần tử HTML (nhấn nút, điền form, chọn dropdown, v.v.).
+* Kiểm tra nội dung, trạng thái của các phần tử trên giao diện.
+* Chụp ảnh màn hình khi kiểm thử thất bại.
 
-* ✅ **Acceptance Testing** – kiểm tra hệ thống có đáp ứng yêu cầu nghiệp vụ hay không.
-* ✅ **Acceptance Test-Driven Development (ATDD)** – viết test trước khi phát triển.
-* ✅ **UI Testing** – qua thư viện như SeleniumLibrary.
-* ✅ **API Testing** – dùng thư viện như `RequestsLibrary`.
-* ✅ **Data-Driven Testing** – kiểm thử theo bảng dữ liệu.
+### 3. Làm sao để tạo keyword tùy chỉnh?
 
----
+Bạn có thể tạo keyword tùy chỉnh bằng cách khai báo trong section `*** Keywords ***`:
 
-## 3. 💻 Robot Framework được viết bằng ngôn ngữ nào?
-
-Robot Framework được viết bằng **Python**, nhưng có thể mở rộng bằng các thư viện viết bằng **Python hoặc Java**.
-
----
-
-## 4. 🧱 Cấu trúc của một test case trong Robot Framework gồm những phần nào?
-
-Một test case trong Robot Framework có cấu trúc dạng **table**, gồm:
-
-```
-*** Test Cases ***
-Tên test case
-    Step 1
-    Step 2
-    ...
+```robot
+*** Keywords ***
+Say Hello
+    Log    Hello, Robot!
 ```
 
-Mỗi bước (step) là một keyword, có thể là keyword có sẵn hoặc keyword do người dùng định nghĩa.
+Bạn cũng có thể định nghĩa keyword trong file riêng và import bằng `Resource`.
 
----
+### 4. Sự khác biệt giữa BuiltIn và SeleniumLibrary?
 
-## 5. 📄 Một file `.robot` thường gồm các section nào?
+| Đặc điểm  | BuiltIn                                           | SeleniumLibrary                      |
+| --------- | ------------------------------------------------- | ------------------------------------ |
+| Loại      | Thư viện tích hợp sẵn                             | Thư viện mở rộng bên ngoài           |
+| Mục đích  | Hỗ trợ keyword xử lý logic, biến, điều kiện, v.v. | Hỗ trợ tương tác với trình duyệt web |
+| Cách dùng | Dùng trực tiếp, không cần cài                     | Cần cài đặt bằng pip                 |
 
-Một file Robot Framework có thể có các section sau:
+### 5. Làm sao để dùng biến trong Robot Framework? Có bao nhiêu loại biến?
 
-| Section          | Mô tả                                      |
-| ---------------- | ------------------------------------------ |
-| ***Settings***   | Khai báo thư viện, resource, biến toàn cục |
-| ***Variables***  | Khai báo biến dùng trong file              |
-| ***Test Cases*** | Khai báo các ca kiểm thử                   |
-| ***Keywords***   | Định nghĩa các keyword tùy chỉnh           |
+Bạn có thể khai báo biến trong section `*** Variables ***` hoặc gán tạm trong test case.
 
-Tất cả các section đều bết đầu bằng dấu `***` và tên section (in hoa hoặc thường đều được chấp nhận).
+Có 3 loại biến chính:
 
----
-
-## 6. ⚖️ Sự khác nhau giữa `Test Cases` và `Keywords` là gì?
-
-| Test Cases                       | Keywords                               |
-| -------------------------------- | -------------------------------------- |
-| Là nơi chứa các kiểm thử thực tế | Là tập hợp các bước có thể tái sử dụng |
-| Có thể chứa nhiều bước thực hiện | Là một đơn vị chức năng có thể gọi lại |
-| Không nên lồng nhau              | Có thể gọi các keyword khác            |
-
-✅ **Test Cases là "người sử dụng", Keywords là "công cụ"**.
-
----
-
-## 7. 🖥️ Làm sao để chạy một file Robot từ dòng lệnh?
-
-Dùng câu lệnh sau trong terminal (đảm bảo đã cài Robot Framework):
-
-```bash
-robot ten_file.robot
-```
+* **Scalar**: `${var}` – giá trị đơn.
+* **List**: `@{list}` – danh sách.
+* **Dictionary**: `&{dict}` – từ điển.
 
 Ví dụ:
 
-```bash
-robot login_test.robot
+```robot
+*** Variables ***
+${NAME}    Alice
+@{FRUITS}    Apple    Banana
+&{USER}     name=Alice    age=30
 ```
 
-Các tuỳ chọn phổ biến:
+### 6. Cách import một thư viện bên ngoài vào file `.robot`?
 
-* `-d logs/` — chỉ định thư mục chứa báo cáo kết quả
-* `--include tag` — chạy test có tag cụ thể
-
----
-
-## 8. 🚲 Làm sao để cài đặt Robot Framework?
-
-Bạn có thể cài đặt bằng `pip` nếu đã có Python:
-
-```bash
-pip install robotframework
-```
-
-Nếu cần dùng cho kiểm thử web:
+* Bước 1: Cài đặt thư viện bằng pip, ví dụ:
 
 ```bash
 pip install robotframework-seleniumlibrary
 ```
 
-Để kiểm tra cài đặt thành công:
+* Bước 2: Import trong file `.robot`:
 
-```bash
-robot --version
+```robot
+*** Settings ***
+Library    SeleniumLibrary
 ```
 
----
+### 7. Có thể tái sử dụng các test case hoặc keyword giữa các file như thế nào?
 
-*Nếu bạn cần bản PDF hoặc Markdown cho tài liệu này, mình có thể chuẩn bị giúp.*
+* **Keyword**: Tạo file riêng chứa section `*** Keywords ***` và dùng `Resource` để import.
+
+```robot
+*** Settings ***
+Resource    common_keywords.robot
+```
+
+* **Test case**: Không tái sử dụng trực tiếp được, nhưng bạn có thể tạo các từ khóa dùng chung để gọi trong nhiều test case ở các file khác nhau.
