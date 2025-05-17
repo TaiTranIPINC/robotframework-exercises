@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.3 on darwin)" generated="20250517 21:41:16.026" rpa="false" schemaversion="4">
+<suite id="s1" name="Greet With Variable" source="/Users/diamond/Documents/robotframework-exercises/exercises/basic/3_variable/greet_with_variable.robot">
+<test id="s1-t1" name="Greet With Name" line="5">
+<kw name="Log" library="BuiltIn">
+<arg>Hello, ${USERNAME}!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250517 21:41:16.039" level="INFO">Hello, Alice!</msg>
+<status status="PASS" starttime="20250517 21:41:16.039" endtime="20250517 21:41:16.039"/>
+</kw>
+<status status="PASS" starttime="20250517 21:41:16.038" endtime="20250517 21:41:16.039"/>
+</test>
+<status status="PASS" starttime="20250517 21:41:16.028" endtime="20250517 21:41:16.039"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Greet With Variable">Greet With Variable</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

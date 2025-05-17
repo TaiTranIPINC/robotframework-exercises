@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.3 on darwin)" generated="20250517 21:08:02.997" rpa="false" schemaversion="4">
+<suite id="s1" name="First Test" source="/Users/diamond/Documents/robotframework-exercises/exercises/basic/1_first_test/first_test.robot">
+<test id="s1-t1" name="Say Hello" line="5">
+<kw name="Say Hello To Robot">
+<kw name="Log" library="BuiltIn">
+<arg>Hello Robot</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250517 21:08:03.521" level="INFO">Hello Robot</msg>
+<status status="PASS" starttime="20250517 21:08:03.521" endtime="20250517 21:08:03.521"/>
+</kw>
+<status status="PASS" starttime="20250517 21:08:03.520" endtime="20250517 21:08:03.521"/>
+</kw>
+<status status="PASS" starttime="20250517 21:08:03.520" endtime="20250517 21:08:03.521"/>
+</test>
+<status status="PASS" starttime="20250517 21:08:02.998" endtime="20250517 21:08:03.521"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="First Test">First Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

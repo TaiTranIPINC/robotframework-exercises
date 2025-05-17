@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.3 on darwin)" generated="20250517 21:56:10.406" rpa="false" schemaversion="4">
+<suite id="s1" name="Compare Strings" source="/Users/diamond/Documents/robotframework-exercises/exercises/basic/5_builtIn_keyword/compare_strings.robot">
+<test id="s1-t1" name="Compare Strings" line="5">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>robot</arg>
+<arg>robot</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20250517 21:56:10.421" endtime="20250517 21:56:10.421"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Matched</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250517 21:56:10.421" level="INFO">Matched</msg>
+<status status="PASS" starttime="20250517 21:56:10.421" endtime="20250517 21:56:10.421"/>
+</kw>
+<status status="PASS" starttime="20250517 21:56:10.421" endtime="20250517 21:56:10.421"/>
+</test>
+<status status="PASS" starttime="20250517 21:56:10.407" endtime="20250517 21:56:10.421"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Compare Strings">Compare Strings</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
